@@ -150,8 +150,8 @@
     }
 
     .welcome-title {
-      font-size: clamp(26px, 4vw, 38px);
-      font-weight: 700;
+      font-size: clamp(20px, 2.6vw, 22px);
+      font-weight: 600;
       letter-spacing: -0.02em;
       line-height: 1.4;
       margin-bottom: 16px;
@@ -162,11 +162,24 @@
       background-clip: text;
     }
 
+    .welcome-title::before {
+      content: "✓";
+      margin-right: 10px;
+      display: inline-block;
+    }
+
     .welcome-subtitle {
-      font-size: 17px;
-      color: var(--text-secondary);
-      max-width: 480px;
-      margin: 0 auto;
+      font-size: clamp(28px, 3.5vw, 34px);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.5;
+      max-width: 640px;
+      margin: 0 auto 0;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .welcome-cta {
@@ -345,16 +358,8 @@
   <main class="main">
     <!-- Welcome Section -->
     <section class="welcome-section">
-      <h1 class="welcome-title">Now you have a great way<br>to use dark mode for the Amazon website</h1>
-      <p class="welcome-subtitle">One-click toggle for comfortable browsing.</p>
-      <div class="welcome-cta">
-        <span class="btn-main" style="cursor: default;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          Extension installed
-        </span>
-      </div>
+      <h1 class="welcome-title">Thanks for installing amazon dark mode switcher!</h1>
+      <p class="welcome-subtitle">To keep it always within reach, just pin it using the steps below.</p>
     </section>
 
     <!-- Steps -->
@@ -363,7 +368,7 @@
       <div class="step">
         <div class="step-header">
           <div class="step-number">1</div>
-          <p class="step-text">Pin the extension for quick access to <strong data-config-text="extensionName">Amazon Dark Mode Switcher</strong></p>
+          <p class="step-text">Pin it for quick access to <strong data-config-text="extensionName">amazon dark mode switcher</strong></p>
         </div>
         <div class="screenshot-wrapper">
           <img src="images/amazonwelcome.jpg" alt="How to pin the extension" class="screenshot">
