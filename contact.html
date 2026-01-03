@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Amazon Dark Mode Switcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-primary: #ffffff;
+      --accent: #FF9900;
+      --accent-hover: #e68a00;
+      --text-primary: #1a1a2e;
+      --text-secondary: #6b7280;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --shadow-btn: 0 4px 14px rgba(255, 153, 0, 0.35);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .logo-text {
+      font-weight: 600;
+      font-size: 15px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-link {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--accent);
+    }
+
+    .btn-install {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-btn);
+    }
+
+    .btn-install:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-install svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .main {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 140px 24px 80px;
+      text-align: center;
+    }
+
+    .page-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .page-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+    }
+
+    .contact-card {
+      background: #f8f9fc;
+      border-radius: 16px;
+      padding: 32px;
+      text-align: left;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 153, 0, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+    }
+
+    .contact-info h3 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 24px;
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
+    }
+
+    .footer-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .footer-text a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      .nav-menu {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="welcome.html" class="logo">
+        <img src="images/logo.png" alt="Logo" class="logo-icon">
+        <span class="logo-text" data-config-text="logoText">amazon dark mode switcher</span>
+      </a>
+      <nav class="nav-links">
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="contact.html" class="nav-link">Contact us</a>
+        </div>
+        <span class="btn-install" style="cursor: default; opacity: 0.9;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Extension installed
+        </span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <h1 class="page-title">Contact Us</h1>
+    <p class="page-subtitle">Have questions or feedback? We'd love to hear from you.</p>
+    
+    <div class="contact-card">
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="contact-info">
+          <h3>Email</h3>
+          <a href="mailto:arhilector@gmail.com" data-config-email>arhilector@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p class="footer-text">Made with ♥ by <a href="mailto:arhilector@gmail.com" data-config-email="href">Arhilector</a></p>
+  </footer>
+  <script src="./site-config.js"></script>
+</body>
+</html>
